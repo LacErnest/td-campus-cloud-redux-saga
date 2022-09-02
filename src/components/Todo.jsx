@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
 import {connect} from 'react-redux'
 
-import PropTypes from 'prop-types'
+//import PropTypes from 'prop-types'
 
 import {
   GET_TODOS_REQUESTED,
@@ -11,10 +11,8 @@ import {
 import TodoForm from './TodoForm'
 import TodoItem from './TodoItem'
 
-const Todo = ({ 
-  todo: {loading, todos},
-getTodos,
-deleteTodo}) => {
+const Todo = ({ todo: {loading, todos}, getTodos, deleteTodo}) => {
+
   useEffect(() => {
     getTodos()
   }, [])
@@ -31,12 +29,12 @@ deleteTodo}) => {
 }
 
 
-Todo.prototypes = {
+/* Todo.PropTypes = {
   loading: PropTypes.bool,
   todos: PropTypes.array,
   getTodos: PropTypes.func.isRequired,
   deleteTodo: PropTypes.func.isRequired
-}
+} */
 
 
 const mapStateToProps = (state) => ({
