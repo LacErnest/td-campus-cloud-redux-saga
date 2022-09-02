@@ -8,14 +8,14 @@ import rootSaga from './sagas'
 
 import rootReducer from './reducers'
 
-const sageMiddleware = createSagaMiddleware()
+const sagaMiddleware = createSagaMiddleware()
 
 const store = createStore(
   rootReducer,
   {},
-  composeWithDevTools(applyMiddleware(sageMiddleware))
+  composeWithDevTools(applyMiddleware(sagaMiddleware))
 )
 
-sageMiddleware.run(rootSaga)
+sagaMiddleware.run(rootSaga)
 
 export default store
